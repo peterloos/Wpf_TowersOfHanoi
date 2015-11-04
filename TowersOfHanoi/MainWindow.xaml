@@ -1,0 +1,30 @@
+﻿<Window x:Class="TowersOfHanoi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfTowerControl;assembly=WpfTowerControl"
+        Title="WPF Towers of Hanoi Simulator" Height="450" Width="700">
+    <Canvas>
+        <Button Name="ButtonStart" Canvas.Left="10" Canvas.Top="340" Width="90"
+                Click="ButtonTest_Click">Start</Button>
+        <Button Name="ButtonStop" Canvas.Left="120" Canvas.Top="340" Width="90" 
+                Click="ButtonTest_Click">Stop</Button>
+        <Button Name="ButtonClear" Canvas.Left="230" Canvas.Top="340" Width="90"
+                Click="ButtonTest_Click">Clear</Button>
+
+        <local:HanoiTowerView Name="TowerLeft"  Canvas.Top="10" Canvas.Left="10"/>
+        <local:HanoiTowerView Name="TowerMiddle" Canvas.Top="10" Canvas.Left="230"/>
+        <local:HanoiTowerView Name="TowerRight" Canvas.Top="10" Canvas.Left="450"/>
+
+        <Label Canvas.Left="450" Canvas.Top="340" Width="90">Discs:</Label>
+        <ComboBox
+            Name="ComboBox_Discs" Width="80" HorizontalContentAlignment="Right"
+            SelectionChanged="ComboBox_SelectionChanged"  Canvas.Left="570" Canvas.Top="340">
+        </ComboBox>
+
+        <Label Canvas.Left="450" Canvas.Top="370" Width="90">Disc Speed:</Label>
+        <ComboBox
+            Name="ComboBox_DiscSpeed" Width="80" HorizontalContentAlignment="Right"
+            SelectionChanged="ComboBox_SelectionChanged"  Canvas.Left="570" Canvas.Top="370">
+        </ComboBox>
+    </Canvas>
+</Window>
